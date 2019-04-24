@@ -85,6 +85,7 @@
 
     <build>
         <sourceDirectory>src/</sourceDirectory>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -95,6 +96,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
@@ -118,7 +120,7 @@
                     <!--是否生成"git.properties"文件;默认值:false;-->
                     <generateGitPropertiesFile>true</generateGitPropertiesFile>
                     <!--指定"git.properties"文件的存放路径(相对于${project.basedir}的一个路径);-->
-                    <generateGitPropertiesFilename>git.properties</generateGitPropertiesFilename>
+                    <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
                     <!--".git"文件夹未找到时,构建是否失败;若设置true,则构建失败;若设置false,则跳过执行该目标;默认值:true;-->
                     <failOnNoGitDirectory>true</failOnNoGitDirectory>
 
@@ -138,6 +140,7 @@
                     </gitDescribe>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
